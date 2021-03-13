@@ -4,6 +4,10 @@ from typing import Union
 from datetime import datetime
 from fred.session import FredSession
 
+# Used for type hinting
+todays_date = datetime.today().date().isoformat()
+
+
 class Releases():
 
     """
@@ -27,16 +31,16 @@ class Releases():
         self.endpoint = '/release'
         self.endpoint_collection = '/releases'
         self._todays_date = datetime.today().date().isoformat()
-    
+
     def get_releases(
-            self,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            order_by: str = 'release_id',
-            sort_order: str = 'asc'
-        ) -> Dict:
+        self,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        order_by: str = 'release_id',
+        sort_order: str = 'asc'
+    ) -> Dict:
         """Get the series in a category.
 
         ### Parameters
@@ -54,11 +58,11 @@ class Releases():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
-        
+
         order_by : str
             One of the following strings: ['release_id', 'name', 
             'press_release', 'realtime_start', 'realtime_end'].
@@ -99,14 +103,14 @@ class Releases():
         return content
 
     def get_releases_dates(
-            self,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            order_by: str = 'release_date',
-            sort_order: str = 'asc'
-        ) -> Dict:
+        self,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        order_by: str = 'release_date',
+        sort_order: str = 'asc'
+    ) -> Dict:
         """Get release dates for all releases of economic data.
 
         ### Parameters
@@ -124,11 +128,11 @@ class Releases():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
-        
+
         order_by : str
             One of the following strings: ['release_date', 'release_id',
              'release_name']. optional, default: release_date
@@ -168,11 +172,11 @@ class Releases():
         return content
 
     def get_release_by_id(
-            self,
-            release_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-        ) -> Dict:
+        self,
+        release_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+    ) -> Dict:
         """Get release dates for all releases of economic data.
 
         ### Parameters
@@ -218,15 +222,15 @@ class Releases():
         return content
 
     def get_release_dates(
-            self,
-            release_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            sort_order: str = 'asc',
-            include_release_dates_with_no_data: bool = False
-        ) -> Dict:
+        self,
+        release_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        sort_order: str = 'asc',
+        include_release_dates_with_no_data: bool = False
+    ) -> Dict:
         """Get release dates for a release of economic data.
 
         ### Overview:
@@ -253,7 +257,7 @@ class Releases():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
@@ -262,7 +266,7 @@ class Releases():
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
             optional, default: `asc`.
-        
+
         include_release_dates_with_no_data : bool
             Determines whether release dates with no data available are returned.
             The defalut value 'false' excludes release dates that do not have data.
@@ -301,18 +305,18 @@ class Releases():
         return content
 
     def get_release_series(
-            self,
-            release_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            sort_order: str = 'asc',
-            filter_variable: str = None,
-            filter_value: str = None,
-            tag_names: List[str] = None,
-            exclude_tag_names: List[str] = None
-        ) -> Dict:
+        self,
+        release_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        sort_order: str = 'asc',
+        filter_variable: str = None,
+        filter_value: str = None,
+        tag_names: List[str] = None,
+        exclude_tag_names: List[str] = None
+    ) -> Dict:
         """Get the series on a release of economic data.
 
         ### Parameters
@@ -333,11 +337,11 @@ class Releases():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
-        
+
         order_by : str
             One of the following strings: ['release_date', 'release_id',
              'release_name']. optional, default: release_date
@@ -355,7 +359,7 @@ class Releases():
         filter_value : str
             The value of the filter_variable attribute to filter results by.
             optional, no filter by default.
-       
+
         tag_names : List[str]
             A list of tag names that series match ALL of. Example value: ['japan', 'imports'].
             optional, no filtering by tags by default See the related request:
@@ -400,11 +404,11 @@ class Releases():
         return content
 
     def get_release_sources(
-            self,
-            release_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-        ) -> Dict:
+        self,
+        release_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+    ) -> Dict:
         """Get the sources for a release of economic data.
 
         ### Parameters
@@ -450,21 +454,21 @@ class Releases():
         return content
 
     def get_release_tags(
-            self,
-            release_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            sort_order: str = 'asc',
-            search_text: str = None,
-            tag_group_id: List[str] = None,
-            tag_names: List[str] = None,
-            order_by: str = 'series_count'
-        ) -> Dict:
+        self,
+        release_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        sort_order: str = 'asc',
+        search_text: str = None,
+        tag_group_id: List[str] = None,
+        tag_names: List[str] = None,
+        order_by: str = 'series_count'
+    ) -> Dict:
         """Get the FRED tags for a release. Optionally, filter results 
         by tag name, tag group, or search. 
-        
+
         ### Overview:
         ----
         Series are assigned tags and releases. Indirectly through series,
@@ -489,7 +493,7 @@ class Releases():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
@@ -498,7 +502,7 @@ class Releases():
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
             optional, default: `asc`.
-       
+
         tag_names : List[str]
             A list of tag names that series match ALL of. Example value: ['japan', 'imports'].
             optional, no filtering by tags by default See the related request:
@@ -543,7 +547,7 @@ class Releases():
                 'limit': limit,
                 'sort_order': sort_order,
                 'search_text': search_text,
-                'tag_names':tag_names,
+                'tag_names': tag_names,
                 'tag_group_id': tag_group_id,
                 'order_by': order_by
             }
@@ -552,19 +556,19 @@ class Releases():
         return content
 
     def get_release_related_tags(
-            self,
-            release_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            sort_order: str = 'asc',
-            search_text: str = None,
-            tag_group_id: List[str] = None,
-            tag_names: List[str] = None,
-            exclude_tag_names: List[str] = None,
-            order_by: str = 'series_count'
-        ) -> Dict:
+        self,
+        release_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        sort_order: str = 'asc',
+        search_text: str = None,
+        tag_group_id: List[str] = None,
+        tag_names: List[str] = None,
+        exclude_tag_names: List[str] = None,
+        order_by: str = 'series_count'
+    ) -> Dict:
         """Get the related FRED tags for one or more FRED tags within a release.
         Optionally, filter results by tag group or search.
 
@@ -595,7 +599,7 @@ class Releases():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
@@ -604,7 +608,7 @@ class Releases():
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
             optional, default: `asc`.
-       
+
         tag_names : List[str]
             A list of tag names that series match ALL of. Example value: ['japan', 'imports'].
             optional, no filtering by tags by default See the related request:
@@ -653,7 +657,8 @@ class Releases():
                 'limit': limit,
                 'sort_order': sort_order,
                 'search_text': search_text,
-                'tag_names':tag_names,
+                'tag_names': tag_names,
+                'exclude_tag_names': exclude_tag_names,
                 'tag_group_id': tag_group_id,
                 'order_by': order_by
             }
@@ -662,12 +667,12 @@ class Releases():
         return content
 
     def get_release_tables(
-            self,
-            release_id: str,
-            element_id: int = None,
-            include_observations_value: bool = False,
-            observation_date: Union[str, datetime] = '9999-12-31'
-        ) -> Dict:
+        self,
+        release_id: str,
+        element_id: int = None,
+        include_observations_value: bool = False,
+        observation_date: Union[str, datetime] = '9999-12-31'
+    ) -> Dict:
         """Get the related FRED tags for one or more FRED tags within a release.
         Optionally, filter results by tag group or search.
 
@@ -690,13 +695,13 @@ class Releases():
             The release table element id you would like to
             retrieve. When the parameter is not passed, the 
             root(top most) element for the release is given.
-        
+
         include_observation_values : bool (optional, Default=False)
             A flag to indicate that observations need to be returned.
             Observation value and date will only be returned for a series
             type element. One of the following strings: [True, False].
 
-        observation_date: Union[str, datetime]  (optional, Default='9999-12-31')
+        observation_date: Union[str, datetime] (optional, Default='9999-12-31')
                 The observation date to be included with the returned
                 release table. YYYY-MM-DD formatted string.
 

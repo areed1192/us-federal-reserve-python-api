@@ -4,6 +4,10 @@ from typing import Union
 from datetime import datetime
 from fred.session import FredSession
 
+# Used for type hinting
+todays_date = datetime.today().date().isoformat()
+
+
 class Categories():
 
     """
@@ -29,7 +33,6 @@ class Categories():
 
         # Set the endpoint.
         self.endpoint = '/category'
-        self._todays_date = datetime.today().date().isoformat()
 
     def get_category(self, category_id: str) -> Dict:
         """Gets a category by it's Category ID.
@@ -43,7 +46,7 @@ class Categories():
         ----
         Dict:
             A `Category` Resource Object.
-        
+
         ### Usage
         ----
             >>> fred_client = FederalReserveClient(api_key='xxxxxx')
@@ -97,7 +100,7 @@ class Categories():
 
     def get_related_category(self, category_id: str) -> Dict:
         """Get the related categories for a category.
-        
+
         ### Overview
         -----
         A related category is a one-way relation between 2
@@ -134,19 +137,19 @@ class Categories():
         return content
 
     def get_category_series(
-            self,
-            category_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            order_by: str = 'series_id',
-            sort_order: str = 'asc',
-            filter_variable: str = None,
-            filter_value: str = None,
-            tag_names: List[str] = None,
-            exclude_tag_names: List[str] = None
-        ) -> Dict:
+        self,
+        category_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        order_by: str = 'series_id',
+        sort_order: str = 'asc',
+        filter_variable: str = None,
+        filter_value: str = None,
+        tag_names: List[str] = None,
+        exclude_tag_names: List[str] = None
+    ) -> Dict:
         """Get the series in a category.
 
         ### Parameters
@@ -166,22 +169,22 @@ class Categories():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
-        
+
         order_by : str
             One of the following strings: ['series_id', 'title', 'units', 'frequency',
             'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated',
             'observation_start', 'observation_end', 'popularity', 'group_popularity'].
             optional, default: `series_id`.
-        
+
         sort_order : str
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
             optional, default: `asc`.
-        
+
         filter_variable : str
             The attribute to filter results by. On of the following strings:
             ['frequency', 'units', 'seasonal_adjustment']. optional, no filter
@@ -236,20 +239,20 @@ class Categories():
         return content
 
     def get_category_tags(
-            self,
-            category_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            order_by: str = 'series_count',
-            sort_order: str = 'asc',
-            tag_names: List[str] = None,
-            tag_group_id: str = None,
-            search_text: str = None
-        ) -> Dict:
+        self,
+        category_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        order_by: str = 'series_count',
+        sort_order: str = 'asc',
+        tag_names: List[str] = None,
+        tag_group_id: str = None,
+        search_text: str = None
+    ) -> Dict:
         """Get the FRED tags for a category.
-        
+
         ### Overview
         ----
         Optionally, filter results by tag name, tag group, or search.
@@ -275,16 +278,16 @@ class Categories():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
-        
+
         order_by : str
             Order results by values of the specified attribute. One of the
             following strings: 'series_count', 'popularity', 'created',
             'name', 'group_id'. optional, default: `series_count`
-        
+
         sort_order : str
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
@@ -299,7 +302,7 @@ class Categories():
             A tag group id to filter tags by type. String, optional, no filtering
             by tag group by default. One of the following: ['freq', 'gen', 'geo',
             'geot', 'rls', 'seas', 'src'].
-        
+
         search_text : str
             The words to find matching tags with. Optional, no filtering by search
             words by default.            
@@ -338,21 +341,21 @@ class Categories():
         return content
 
     def get_related_category_tags(
-            self,
-            category_id: str,
-            realtime_start: Union[str, datetime] = datetime.today().date().isoformat(),
-            realtime_end: Union[str, datetime] = datetime.today().date().isoformat(),
-            offset: int = 0,
-            limit: int = 1000,
-            order_by: str = 'series_count',
-            sort_order: str = 'asc',
-            tag_names: List[str] = None,
-            exclude_tag_names: List[str] = None,
-            tag_group_id: str = None,
-            search_text: str = None
-        ) -> Dict:
+        self,
+        category_id: str,
+        realtime_start: Union[str, datetime] = todays_date,
+        realtime_end: Union[str, datetime] = todays_date,
+        offset: int = 0,
+        limit: int = 1000,
+        order_by: str = 'series_count',
+        sort_order: str = 'asc',
+        tag_names: List[str] = None,
+        exclude_tag_names: List[str] = None,
+        tag_group_id: str = None,
+        search_text: str = None
+    ) -> Dict:
         """Get the related FRED tags for one or more FRED tags within a category.
-        
+
         ### Overview
         ----
         Optionally, filter results by tag group or search. FRED tags are attributes
@@ -380,16 +383,16 @@ class Categories():
 
         offset : int
             Non-negative integer, optional, default: 0.
-        
+
         limit : int
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
-        
+
         order_by : str
             Order results by values of the specified attribute. One of the
             following strings: 'series_count', 'popularity', 'created',
             'name', 'group_id'. optional, default: `series_count`
-        
+
         sort_order : str
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
@@ -409,7 +412,7 @@ class Categories():
             A tag group id to filter tags by type. String, optional, no filtering
             by tag group by default. One of the following: ['freq', 'gen', 'geo',
             'geot', 'rls', 'seas', 'src'].
-        
+
         search_text : str
             The words to find matching tags with. Optional, no filtering by search
             words by default.            
