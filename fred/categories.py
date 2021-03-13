@@ -170,52 +170,44 @@ class Categories():
         category_id : str
             The category ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        order_by : str
+        order_by : str (optional, Default='series_id')
             One of the following strings: ['series_id', 'title', 'units', 'frequency',
             'seasonal_adjustment', 'realtime_start', 'realtime_end', 'last_updated',
             'observation_start', 'observation_end', 'popularity', 'group_popularity'].
-            optional, default: `series_id`.
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        filter_variable : str
+        filter_variable : str (optional, Default=None)
             The attribute to filter results by. On of the following strings:
-            ['frequency', 'units', 'seasonal_adjustment']. optional, no filter
-            by default
+            ['frequency', 'units', 'seasonal_adjustment'].
 
-        filter_value : str
+        filter_value : str (optional, Default=None)
             The value of the filter_variable attribute to filter results by.
-            optional, no filter by default.
 
-        tag_names : List[str]
+        tag_names : List[str] (optional, Default=None)
             A list of tag names that series match ALL of.Example value: ['income','bea'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        exclude_tag_names : List[str]
+        exclude_tag_names : List[str] (optional, Default=None)
             A list of tag names that series match NONE of. Example value: ['income','bea'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
         ### Returns
         ----
@@ -279,46 +271,40 @@ class Categories():
         category_id : str
             The category ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        order_by : str
+        order_by : str (optional, Default='series_count')
             Order results by values of the specified attribute. One of the
-            following strings: 'series_count', 'popularity', 'created',
-            'name', 'group_id'. optional, default: `series_count`
+            following strings: ['series_count', 'popularity', 'created',
+            'name', 'group_id'].
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        tag_names : List[str]
+        tag_names : List[str] (optional, Default=None)
             A list of tag names that series match ALL of.Example value: ['income','bea'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        tag_group_id : str
-            A tag group id to filter tags by type. String, optional, no filtering
-            by tag group by default. One of the following: ['freq', 'gen', 'geo',
-            'geot', 'rls', 'seas', 'src'].
+        tag_group_id : str (optional, Default=None)
+            A tag group id to filter tags by type. One of the following: ['freq', 'gen',
+            'geo', 'geot', 'rls', 'seas', 'src'].
 
-        search_text : str
-            The words to find matching tags with. Optional, no filtering by search
-            words by default.            
+        search_text : str (optional, Default=None)
+            The words to find matching tags with.
 
         ### Returns
         ----
@@ -384,51 +370,44 @@ class Categories():
         category_id : str
             The category ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        order_by : str
+        order_by : str (optional, Default='series_count')
             Order results by values of the specified attribute. One of the
-            following strings: 'series_count', 'popularity', 'created',
-            'name', 'group_id'. optional, default: `series_count`
+            following strings: ['series_count', 'popularity', 'created',
+            'name', 'group_id'].
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        tag_names : List[str]
+        tag_names : List[str] (optional, Default=None)
             A list of tag names that series match ALL of.Example value: ['income','bea'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        exclude_tag_names : List[str]
+        exclude_tag_names : List[str] (optional, Default=None)
             A list of tag names that series match NONE of. Example value: ['income','bea'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        tag_group_id : str
-            A tag group id to filter tags by type. String, optional, no filtering
-            by tag group by default. One of the following: ['freq', 'gen', 'geo',
-            'geot', 'rls', 'seas', 'src'].
+        tag_group_id : str (optional, Default=None)
+            A tag group id to filter tags by type. One of the following: ['freq', 'gen', 
+            'geo', 'geot', 'rls', 'seas', 'src'].
 
-        search_text : str
-            The words to find matching tags with. Optional, no filtering by search
-            words by default.            
+        search_text : str (optional, Default=None)
+            The words to find matching tags with.
 
         ### Returns
         ----

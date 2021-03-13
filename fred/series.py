@@ -362,7 +362,7 @@ class Series():
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
 
-        order_by : str (optional, Default=Union['series_id', 'search_rank'])
+        order_by : str (optional, Default='series_id')
             One of the following strings: ['search_rank', 'series_id', 'title', 
             'units', 'frequency', 'seasonal_adjustment', 'realtime_start', 'realtime_end', 
             'last_updated', 'observation_start', 'observation_end', 'popularity',
@@ -471,7 +471,7 @@ class Series():
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
 
-        order_by : str (optional, Default=Union['series_id', 'search_rank'])
+        order_by : str (optional, Default='series_count')
             One of the following strings: ['series_count', 'popularity', 'created',
             'name', 'group_id']
 
@@ -566,7 +566,7 @@ class Series():
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
 
-        order_by : str (optional, Default=Union['series_id', 'search_rank'])
+        order_by : str (optional, Default='series_count')
             One of the following strings: ['series_count', 'popularity', 'created',
             'name', 'group_id']
 

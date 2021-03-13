@@ -2,10 +2,15 @@
 
 ## Table of Contents
 
+- [Current Version](#current-version)
 - [Overview](#overview)
 - [Setup](#setup)
 - [Usage](#usage)
 - [Support These Projects](#support-these-projects)
+
+## Current Version
+
+Version: **0.1.0**
 
 ## Overview
 
@@ -62,13 +67,12 @@ pip install .
 This will install all the dependencies listed in the `setup.py` file. Once done
 you can use the library wherever you want.
 
-<!--
 **Setup - PyPi Install:**
 
 To **install** the library, run the following command from the terminal.
 
 ```console
-pip install federal-register
+pip install federal-reserve-python-api
 ```
 
 **Setup - PyPi Upgrade:**
@@ -76,8 +80,8 @@ pip install federal-register
 To **upgrade** the library, run the following command from the terminal.
 
 ```console
-pip install --upgrade federal-register
-``` -->
+pip install --upgrade federal-reserve-python-api
+```
 
 ## Usage
 

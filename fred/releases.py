@@ -63,32 +63,29 @@ class Releases():
         ### Parameters
         ----
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        order_by : str
-            One of the following strings: ['release_id', 'name', 
-            'press_release', 'realtime_start', 'realtime_end'].
-            optional, default: release_id
+        order_by : str (optional, Default='release_id')
+            Order results by values of the specified attribute. One 
+            of the following strings: ['release_id', 'name', 'press_release',
+            'realtime_start', 'realtime_end'].
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
         ### Returns
         ----
@@ -133,31 +130,29 @@ class Releases():
         ### Parameters
         ----
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
         order_by : str (optional, Default='release_id')
-            One of the following strings: ['release_id', 'name', 
-            'press_release', 'realtime_start', 'realtime_end'].
+            Order results by values of the specified attribute. One 
+            of the following strings: ['release_id', 'name', 'press_release',
+            'realtime_start', 'realtime_end'].
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
         ### Returns
         ----
@@ -202,15 +197,13 @@ class Releases():
         release_id : str
             The release ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
         ### Returns
         ----
@@ -262,34 +255,30 @@ class Releases():
         release_id : str
             The release ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        include_release_dates_with_no_data : bool
+        include_release_dates_with_no_data : bool (optional, Default=False)
             Determines whether release dates with no data available are returned.
-            The defalut value 'false' excludes release dates that do not have data.
+            The defalut value `False` excludes release dates that do not have data.
             In particular, this excludes future release dates which may be available
-            in the FRED release calendar or the ALFRED release calendar. One of the
-            following strings: ['true', 'false']. optional, default: false
+            in the FRED release calendar or the ALFRED release calendar.
 
         ### Returns
         ----
@@ -342,50 +331,44 @@ class Releases():
         release_id : str
             The release ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        order_by : str
-            One of the following strings: ['release_date', 'release_id',
-             'release_name']. optional, default: release_date
+        order_by : str (optional, Default='release_date')
+            Order results by values of the specified attribute. One 
+            of the following strings: ['release_date', 'release_id',
+            'release_name'].
 
-        sort_order : str
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        filter_variable : str
+        filter_variable : str (optional, Default=None)
             The attribute to filter results by. On of the following strings:
-            ['frequency', 'units', 'seasonal_adjustment']. optional, no filter
-            by default
+            ['frequency', 'units', 'seasonal_adjustment'].
 
-        filter_value : str
+        filter_value : str (optional, Default=None)
             The value of the filter_variable attribute to filter results by.
-            optional, no filter by default.
 
-        tag_names : List[str]
-            A list of tag names that series match ALL of. Example value: ['japan', 'imports'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+        tag_names : List[str] (optional, Default=None)
+            A list of tag names that series match ALL of.Example value: ['income','bea'].
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        exclude_tag_names : List[str]
-            A list of tag names that series match NONE of. Example value: ['japan', 'imports'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+        exclude_tag_names : List[str] (optional, Default=None)
+            A list of tag names that series match NONE of. Example value: ['income','bea'].
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
         ### Returns
         ----
@@ -434,15 +417,13 @@ class Releases():
         release_id : str
             The release ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
         ### Returns
         ----
@@ -498,46 +479,40 @@ class Releases():
         release_id : str
             The release ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        sort_order : str
+        order_by : str (optional, Default='series_count')
+            Order results by values of the specified attribute. One 
+            of the following strings: ['series_count', 'popularity',
+            'created', 'name', 'group_id'].
+
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        tag_names : List[str]
-            A list of tag names that series match ALL of. Example value: ['japan', 'imports'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+        tag_names : List[str] (optional, Default=None)
+            A list of tag names that series match ALL of.Example value: ['income','bea'].
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        tag_group_id : str
-            A tag group id to filter tags by type. String, optional, no filtering
-            by tag group by default. One of the following: ['freq', 'gen', 'geo',
-            'geot', 'rls', 'seas', 'src'].
+        tag_group_id : str (optional, Default=None)
+            A tag group id to filter tags by type. One of the following: ['freq', 'gen',
+            'geo', 'geot', 'rls', 'seas', 'src'].
 
-        search_text : str
-            The words to find matching tags with. Optional, no filtering by search
-            words by default.
-
-        order_by : str
-            Order results by values of the specified attribute. One of the following
-            strings: ['series_count', 'popularity', 'created', 'name', 'group_id'].
-            optional, default: series_count
+        search_text : str (optional, Default=None)
+            The words to find matching tags with.
 
         ### Returns
         ----
@@ -604,50 +579,44 @@ class Releases():
         release_id : str
             The release ID you want to query.
 
-        realtime_start : Union[str, datetime]
+        realtime_start : Union[str, datetime] (optional, Default=today's date)
             The start of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        realtime_end : Union[str, datetime]
+        realtime_end : Union[str, datetime] (optional, Default=today's date)
             The end of the real-time period. For more information,
             see Real-Time Periods. YYYY-MM-DD formatted string,
-            optional, default: today's date
 
-        offset : int
-            Non-negative integer, optional, default: 0.
+        offset : int (optional, Default=0)
+            Non-negative integer.
 
-        limit : int
+        limit : int (optional, Default=1000)
             The maximum number of results to return. Is an integer
-            between 1 and 1000, optional, default: 1000
+            between 1 and 1000.
 
-        sort_order : str
+        order_by : str (optional, Default='series_count')
+            Order results by values of the specified attribute. One 
+            of the following strings: ['series_count', 'popularity',
+            'created', 'name', 'group_id'].
+
+        sort_order : str (optional, Default='asc')
             Sort results is ascending or descending order for attribute values
             specified by order_by. One of the following strings: ['asc', 'desc'].
-            optional, default: `asc`.
 
-        tag_names : List[str]
-            A list of tag names that series match ALL of. Example value: ['japan', 'imports'].
-            optional, no filtering by tags by default See the related request:
-            https://fred.stlouisfed.org/docs/api/fred/tags.html.
+        tag_names : List[str] (optional, Default=None)
+            A list of tag names that series match ALL of.Example value: ['income','bea'].
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        exclude_tag_names : List[str]
-            A semicolon delimited list of tag names that series match none of. String, optional,
-            no default value. Example value: ['monthly, financial'].
+        exclude_tag_names : List[str] (optional, Default=None)
+            A list of tag names that series match NONE of. Example value: ['income','bea'].
+            See the related request: https://fred.stlouisfed.org/docs/api/fred/tags.html.
 
-        tag_group_id : str
-            A tag group id to filter tags by type. String, optional, no filtering
-            by tag group by default. One of the following: ['freq', 'gen', 'geo',
-            'geot', 'rls', 'seas', 'src'].
+        tag_group_id : str (optional, Default=None)
+            A tag group id to filter tags by type. One of the following: ['freq', 'gen',
+            'geo', 'geot', 'rls', 'seas', 'src'].
 
-        search_text : str
-            The words to find matching tags with. Optional, no filtering by search
-            words by default.
-
-        order_by : str
-            Order results by values of the specified attribute. One of the following
-            strings:  'series_count', 'popularity', 'created', 'name', 'group_id'].
-            optional, default: series_count
+        search_text : str (optional, Default=None)
+            The words to find matching tags with.
 
         ### Returns
         ----
@@ -719,8 +688,8 @@ class Releases():
             type element. One of the following strings: [True, False].
 
         observation_date: Union[str, datetime] (optional, Default='9999-12-31')
-                The observation date to be included with the returned
-                release table. YYYY-MM-DD formatted string.
+            The observation date to be included with the returned
+            release table. YYYY-MM-DD formatted string.
 
         ### Returns
         ----
