@@ -36,6 +36,14 @@ class Releases():
         self.endpoint_collection = '/releases'
         self._todays_date = datetime.today().date().isoformat()
 
+    def __repr__(self) -> str:
+        """String representation of the `FederalReserveClient.Releases` object."""
+
+        # define the string representation
+        str_representation = '<FederalReserveClient.Releases (active=True, connected=True)>'
+
+        return str_representation
+
     def get_releases(
         self,
         realtime_start: Union[str, datetime] = todays_date,

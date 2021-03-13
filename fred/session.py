@@ -54,6 +54,14 @@ class FredSession():
             format=log_format
         )
 
+    def __repr__(self) -> str:
+        """String representation of the `FederalReserveClient.FredSession` object."""
+
+        # define the string representation
+        str_representation = '<FederalReserveClient.FredSession (active=True, connected=True)>'
+
+        return str_representation
+
     def build_url(self, endpoint: str) -> str:
         """Builds the full url for the endpoint.
 

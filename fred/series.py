@@ -35,6 +35,14 @@ class Series():
         self.endpoint = '/series'
         self._todays_date = datetime.today().date().isoformat()
 
+    def __repr__(self) -> str:
+        """String representation of the `FederalReserveClient.Series` object."""
+
+        # define the string representation
+        str_representation = '<FederalReserveClient.Series (active=True, connected=True)>'
+
+        return str_representation
+
     def get_series(
         self,
         series_id: str,

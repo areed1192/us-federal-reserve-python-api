@@ -29,8 +29,13 @@ class FederalReserveClient():
         self._api_key = api_key
         self.fred_session = FredSession(client=self)
 
-    def __repr__(self):
-        pass
+    def __repr__(self) -> str:
+        """String representation of the `FederalReserveClient` object."""
+
+        # define the string representation
+        str_representation = '<FederalReserveClient (active=True, connected=True)>'
+
+        return str_representation
 
     def categories(self) -> Categories:
         """Used to access the `Categories` services.

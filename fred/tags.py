@@ -36,6 +36,14 @@ class Tags():
         self.endpoint = '/tag'
         self.endpoint_collection = '/tags'
 
+    def __repr__(self) -> str:
+        """String representation of the `FederalReserveClient.Tags` object."""
+
+        # define the string representation
+        str_representation = '<FederalReserveClient.Tags (active=True, connected=True)>'
+
+        return str_representation
+
     def get_tags(
         self,
         realtime_start: Union[str, datetime] = todays_date,

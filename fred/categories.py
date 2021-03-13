@@ -34,6 +34,14 @@ class Categories():
         # Set the endpoint.
         self.endpoint = '/category'
 
+    def __repr__(self) -> str:
+        """String representation of the `FederalReserveClient.Categories` object."""
+
+        # define the string representation
+        str_representation = '<FederalReserveClient.Categories (active=True, connected=True)>'
+
+        return str_representation
+
     def get_category(self, category_id: str) -> Dict:
         """Gets a category by it's Category ID.
 
