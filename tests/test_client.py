@@ -4,6 +4,8 @@ from unittest import TestCase
 from configparser import ConfigParser
 from fred.client import FederalReserveClient
 from fred.categories import Categories
+from fred.releases import Releases
+from fred.series import Series
 
 
 class FredClientTest(TestCase):
@@ -13,13 +15,9 @@ class FredClientTest(TestCase):
     def setUp(self) -> None:
         """Set up the `FederalReserveClient` Client."""
 
-        # Initialize the Parser.
+        # Read the file and get the API key.
         config = ConfigParser()
-
-        # Read the file.
         config.read('config/config.ini')
-
-        # Get the specified credentials.
         api_key = config.get('main', 'api_key')
 
         # Initialize the Client.
@@ -35,8 +33,21 @@ class FredClientTest(TestCase):
 
         # Initialize the Categories Service.
         categories_service = self.fred_client.categories()
-
         self.assertIsInstance(categories_service, Categories)
+
+    def test_creates_instance_of_releases_session(self):
+        """Create an instance and make sure it's a `fred.Releases` object."""
+
+        # Initialize the Releases Service.
+        releases_services = self.fred_client.releases()
+        self.assertIsInstance(releases_services, Releases)
+
+    def test_creates_instance_of_series_session(self):
+        """Create an instance and make sure it's a `fred.Series` object."""
+
+        # Initialize the Series Service.
+        series_services = self.fred_client.series()
+        self.assertIsInstance(series_services, Series)
 
     def tearDown(self) -> None:
         """Teardown the `FederalReserveClient` Client."""
