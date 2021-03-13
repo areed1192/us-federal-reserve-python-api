@@ -60,6 +60,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series(series_id='GNPCA')
         """
 
         content = self.fred_session.make_request(
@@ -101,6 +107,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series_categories(series_id='EXJPUS')
         """
 
         content = self.fred_session.make_request(
@@ -200,6 +212,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series_observations(series_id='GNPCA')
         """
 
         # Conver the date to proper formats.
@@ -237,7 +255,7 @@ class Series():
 
         return content
 
-    def get_series_releases(
+    def get_series_release(
         self,
         series_id: str,
         realtime_start: Union[str, datetime] = todays_date,
@@ -262,6 +280,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series_release(series_id='IRA')
         """
 
         content = self.fred_session.make_request(
@@ -356,6 +380,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.series_search(search_text='Monetary Service Index')
         """
 
         content = self.fred_session.make_request(
@@ -446,6 +476,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.series_tag_search(series_search_text='Monetary Service Index')
         """
 
         content = self.fred_session.make_request(
@@ -540,6 +576,15 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.series_releated_tags_search(
+                    series_search_text='Mortgage Rates',
+                    tag_names=['30-year', 'frb']
+                )
         """
 
         content = self.fred_session.make_request(
@@ -599,6 +644,12 @@ class Series():
         -------
         Dict
             A collection of `Series.Tags` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series_tags(series_id='STLFSI')
         """
 
         content = self.fred_session.make_request(
@@ -666,6 +717,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series_updates()
         """
 
         content = self.fred_session.make_request(
@@ -728,6 +785,12 @@ class Series():
         -------
         Dict
             A collection of `Series` resources.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
+            >>> series_service.get_series_vintage_dates(series_id='GNPCA')
         """
 
         content = self.fred_session.make_request(

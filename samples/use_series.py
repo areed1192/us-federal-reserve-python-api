@@ -27,7 +27,7 @@ pprint(series_service.get_series_categories(series_id='EXJPUS'))
 pprint(series_service.get_series_observations(series_id='GNPCA'))
 
 # Grab the releases for a specific series.
-pprint(series_service.get_series_releases(series_id='IRA'))
+pprint(series_service.get_series_release(series_id='IRA'))
 
 # Search for series that contain the phrase 'Monetary Service Index'.
 pprint(series_service.series_search(search_text='Monetary Service Index'))
@@ -41,7 +41,7 @@ pprint(
 
 # Grab the Related FRED Tags for a searies search.
 pprint(
-    series_service.series_tag_search(
+    series_service.series_releated_tags_search(
         series_search_text='Mortgage Rates',
         tag_names=['30-year', 'frb']
     )
