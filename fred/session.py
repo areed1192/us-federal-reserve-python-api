@@ -1,6 +1,7 @@
 import json
 import requests
 import logging
+import pathlib
 
 from typing import Dict
 
@@ -35,8 +36,12 @@ class FredSession():
         self.client: FederalReserveClient = client
         self.resource = 'https://api.stlouisfed.org/fred'
 
+        if not pathlib.Path('logs').exists():
+            pathlib.Path('logs').mkdir()
+            pathlib.Path('logs/fred_api_log.log').touch()
+
         logging.basicConfig(
-            filename="logs/log_file_custom.log",
+            filename="logs/fred_api_log.log",
             level=logging.INFO,
             encoding="utf-8",
             format=log_format
@@ -106,6 +111,13 @@ class FredSession():
             "URL: {url}".format(url=url)
         )
 
+        params_cleaned = params.copy()
+        params_cleaned['api_key'] = 'xxxxxxxx'
+
+        logging.info(
+            "PARAMS: {params}".format(params=params_cleaned)
+        )
+
         # Define a new session.
         request_session = requests.Session()
         request_session.verify = True
@@ -130,11 +142,13 @@ class FredSession():
         # If it's okay and no details.
         if response.ok and len(response.content) > 0:
             return response.json()
+
         elif len(response.content) > 0 and response.ok:
             return {
                 'message': 'response successful',
                 'status_code': response.status_code
             }
+            
         elif not response.ok:
 
             # Define the error dict.

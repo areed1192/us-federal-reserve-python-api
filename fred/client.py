@@ -4,6 +4,7 @@ from typing import Dict
 from typing import Union
 
 from fred.session import FredSession
+from fred.categories import Categories
 
 
 class FederalReserveClient():
@@ -25,3 +26,17 @@ class FederalReserveClient():
 
     def __repr__(self):
         pass
+
+    def categories(self) -> Categories:
+        """Used to access the `Categories` services.
+
+        ### Returns
+        ---
+        Users:
+            The `Categories` services Object.
+        """
+
+        # Grab the `Categories` object.
+        object = Categories(session=self.fred_session)
+
+        return object

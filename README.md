@@ -1,4 +1,4 @@
-# Template Repo
+# United States Federal Reserve API
 
 ## Table of Contents
 
@@ -9,9 +9,24 @@
 
 ## Overview
 
+What is FRED? Short for Federal Reserve Economic Data, FRED is
+an online database consisting of hundred of thousands of economic
+data time series from scores of national, international, public, and
+private sources. FRED, created and maintained by the Research Department at
+the Federal Reserve Bank of St. Louis, goes far beyond simply providing data:
+It combines data with a powerful mix of tools that help the user understand, interact
+with, display, and disseminate the data. In essence, FRED helps users tell their
+data stories. The purpose of this article is to guide the potential (or current)
+FRED user through the various aspects and tools of the database.
+
+This library will give you the capability to query data from FRED using Python. To
+get started using this library all you need is an API key. To register for an API
+Key please go the [developers resources](https://fred.stlouisfed.org/docs/api/api_key.html)
+provided by Fred.
+
 ## Setup
 
-**Setup - Requirements Install:***
+**Setup - Requirements Install:**
 
 For this particular project, you only need to install the dependencies, to use the project. The dependencies
 are listed in the `requirements.txt` file and can be installed by running the following command:
@@ -47,6 +62,7 @@ pip install .
 This will install all the dependencies listed in the `setup.py` file. Once done
 you can use the library wherever you want.
 
+<!--
 **Setup - PyPi Install:**
 
 To **install** the library, run the following command from the terminal.
@@ -61,14 +77,35 @@ To **upgrade** the library, run the following command from the terminal.
 
 ```console
 pip install --upgrade federal-register
-```
+``` -->
 
 ## Usage
 
-Here is a simple example of using the `place_holder` library.
+Here is a simple example of using the `fred` library to query some category
+data.
 
 ```python
+from pprint import pprint
+from configparser import ConfigParser
+from fred.client import FederalReserveClient
 
+# Initialize the Parser.
+config = ConfigParser()
+
+# Read the file.
+config.read('config/config.ini')
+
+# Get the specified credentials.
+api_key = config.get('main', 'api_key')
+
+# Initialize the Client.
+fred_client = FederalReserveClient(api_key=api_key)
+
+# Initialize the Categories Service.
+categories_service = fred_client.categories()
+
+# Grab a category by it's ID.
+pprint(categories_service.get_category(category_id='125'))
 ```
 
 ## Support These Projects
@@ -81,5 +118,5 @@ pay monthly fees.
 **YouTube:**
 If you'd like to watch more of my content, feel free to visit my YouTube channel [Sigma Coding](https://www.youtube.com/c/SigmaCoding).
 
-<!-- **Hire Me:**
-If you have a project, you think I can help you with feel free to reach out at [coding.sigma@gmail.com](mailto:coding.sigma@gmail.com?subject=[GitHub]%20Project%20Proposal) or fill out the [contract request form](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAa__aAmF1hURFg5ODdaVTg1TldFVUhDVjJHWlRWRzhZRy4u) -->
+**Questions:**
+If you have questions please feel free to reach out to me at [coding.sigma@gmail.com](mailto:coding.sigma@gmail.com?subject=[GitHub]%20Fred%20Library)
