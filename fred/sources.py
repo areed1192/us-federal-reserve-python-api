@@ -13,6 +13,11 @@ class Sources():
     """
     ## Overview:
     ----
+    The United States Federal Reserves many different
+    sources of Economic data. The `Sources` object allows
+    users to query the different sources provided by FRED
+    and do complex searches when the user desires more
+    specific reports.
     """
 
     def __init__(self, session: FredSession) -> None:

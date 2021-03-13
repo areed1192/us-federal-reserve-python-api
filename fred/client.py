@@ -1,8 +1,3 @@
-
-from typing import List
-from typing import Dict
-from typing import Union
-
 from fred.session import FredSession
 from fred.categories import Categories
 from fred.releases import Releases
@@ -12,6 +7,14 @@ from fred.tags import Tags
 
 
 class FederalReserveClient():
+
+    """
+    Overview:
+    ----
+    The `FederalReserveClient` is the main entry point to the
+    different services provided by FRED. We use this object to
+    initialize the other services.
+    """
 
     def __init__(self, api_key: str) -> None:
         """Initializes the `FederalReserveClient`.

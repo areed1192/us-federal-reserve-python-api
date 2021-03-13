@@ -10,8 +10,13 @@ from datetime import date
 
 class FredSession():
 
-    """Serves as the Session for the Current FRED
-    API."""
+    """
+    Overview:
+    ----
+    Serves as the main Session for the Current FRED
+    API. The `FredSession` object will handle all the
+    requests made to the FRED API.
+    """
 
     def __init__(self, client: object) -> None:
         """Initializes the `FredSession` client.
@@ -68,15 +73,15 @@ class FredSession():
         return url
 
     def make_request(
-            self,
-            method: str,
-            endpoint: str,
-            mode: str = None,
-            params: dict = None,
-            data: dict = None,
-            json_payload: dict = None,
-            order_details: bool = False
-        ) -> Dict:
+        self,
+        method: str,
+        endpoint: str,
+        mode: str = None,
+        params: dict = None,
+        data: dict = None,
+        json_payload: dict = None,
+        order_details: bool = False
+    ) -> Dict:
         """Handles all the requests in the library.
 
         ### Overview:
@@ -113,19 +118,20 @@ class FredSession():
             "URL: {url}".format(url=url)
         )
 
-
         if 'realtime_start' in params and isinstance(params['realtime_start'], datetime):
             params['realtime_start'] = params['realtime_start'].date().isoformat()
 
         if 'realtime_end' in params and isinstance(params['realtime_end'], datetime):
             params['realtime_end'] = params['realtime_end'].date().isoformat()
-        
+
         if 'tag_names' in params and isinstance(params['tag_names'], list):
-            logging.info('Joining Tag Names: {lst}'.format(lst=params['tag_names']))
+            logging.info('Joining Tag Names: {lst}'.format(
+                lst=params['tag_names']))
             params['tag_names'] = ';'.join(params['tag_names'])
 
         if 'exclude_tag_names' in params and isinstance(params['exclude_tag_names'], list):
-            logging.info('Joining Exclude Tag Names: {lst}'.format(lst=params['exclude_tag_names']))
+            logging.info('Joining Exclude Tag Names: {lst}'.format(
+                lst=params['exclude_tag_names']))
             params['exclude_tag_names'] = ';'.join(params['exclude_tag_names'])
 
         params_cleaned = params.copy()
@@ -165,7 +171,7 @@ class FredSession():
                 'message': 'response successful',
                 'status_code': response.status_code
             }
-            
+
         elif not response.ok:
 
             # Define the error dict.

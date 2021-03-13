@@ -13,6 +13,10 @@ class Releases():
     """
     ## Overview:
     ----
+    Releases are economic data provided by the United States
+    Federal Reserve in the form of economic reports. The Releases
+    services allows you to query and search for Releases using the
+    FRED API.
     """
 
     def __init__(self, session: FredSession) -> None:
