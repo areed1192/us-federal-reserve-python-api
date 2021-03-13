@@ -26,6 +26,11 @@ class Releases():
         ----
         session : `FredSession`
             An initialized session of the `FredSession`.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> releases_service = fred_client.releases()
         """
 
         # Set the session.

@@ -24,6 +24,10 @@ class FederalReserveClient():
         api_key : str
             The API key assigned to you when you registered with
             FRED. For more info: https://fred.stlouisfed.org/docs/api/fred/
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
         """
 
         self._api_key = api_key

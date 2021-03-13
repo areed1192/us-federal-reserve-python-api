@@ -26,6 +26,11 @@ class Series():
         ----
         session : `FredSession`
             An initialized session of the `FredSession`.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> series_service = fred_client.series()
         """
 
         # Set the session.

@@ -26,6 +26,11 @@ class Categories():
         ----
         session : `FredSession`
             An initialized session of the `FredSession`.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> categories_service = fred_client.categories()
         """
 
         # Set the session.

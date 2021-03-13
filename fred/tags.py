@@ -27,6 +27,11 @@ class Tags():
         ----
         session : `FredSession`
             An initialized session of the `FredSession`.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> tag_services = fred_client.tags()
         """
 
         # Set the session.

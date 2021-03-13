@@ -27,6 +27,11 @@ class Sources():
         ----
         session : `FredSession`
             An initialized session of the `FredSession`.
+
+        ### Usage
+        ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
+            >>> sources_services = fred_client.sources()
         """
 
         # Set the session.

@@ -32,6 +32,7 @@ class FredSession():
 
         ### Usage:
         ----
+            >>> fred_client = FederalReserveClient(api_key='xxxxxx')
             >>> fred_session = FredSession()
         """
 
