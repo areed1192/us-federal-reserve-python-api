@@ -26,7 +26,7 @@ class FredSession():
         The `FredSession` object handles all the requests made
         for the different endpoints on the FRED API.
 
-        ### Arguments:
+        ### Parameters:
         ----
         client (str): The `fred.FederalReserveClient` Python Client.
 
@@ -85,11 +85,9 @@ class FredSession():
         self,
         method: str,
         endpoint: str,
-        mode: str = None,
         params: dict = None,
         data: dict = None,
-        json_payload: dict = None,
-        order_details: bool = False
+        json_payload: dict = None
     ) -> Dict:
         """Handles all the requests in the library.
 
@@ -99,25 +97,27 @@ class FredSession():
         this function handles building the URL, defining Content-Type, passing
         through payloads, and handling any errors that may arise during the request.
 
-        ### Arguments:
+        ### Parameters:
         ----
-        method: The Request method, can be one of the
+        method : str
+            The Request method, can be one of the
             following: ['get','post','put','delete','patch']
 
-        endpoint: The API URL endpoint, example is 'quotes'
+        endpoint : str
+            The API URL endpoint.
 
-        mode: The content-type mode, can be one of the
-            following: ['form','json']
+        params : dict (optional, Default=None) 
+            The URL params for the request.
 
-        params: The URL params for the request.
+        data : dict (optional, Default=None)
+            A data payload for a request.
 
-        data: A data payload for a request.
-
-        json: A json data payload for a request
+        json : dict (optional, Default=None)
+            A json data payload for a request
 
         ### Returns:
         ----
-        A Dictionary object containing the JSON values.
+            A Dictionary object containing the JSON values.
         """
 
         # Build the URL.
