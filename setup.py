@@ -17,7 +17,7 @@ setup(
     version='0.1.0',
 
     # Define descriptions.
-    description='A Python application which is used to pull data from the US Federal Reserve.',
+    description='A Python application used to pull data from the US Federal Reserve.',
     long_description=long_description,
     long_description_content_type="text/markdown",
 
@@ -35,7 +35,7 @@ setup(
     ),
 
     # Define the python version.
-    python_requires='>3.7',
+    python_requires='>3.6',
 
     # Define our classifiers.
     classifiers=[
