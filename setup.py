@@ -7,7 +7,7 @@ with open(file="README.md", mode="r") as fh:
 
 setup(
 
-    name='',
+    name='federal-reserve-python-api',
 
     # Define Author Info.
     author='Alex Reed',
@@ -17,19 +17,21 @@ setup(
     version='0.1.0',
 
     # Define descriptions.
-    description='',
+    description='A Python application which is used to pull data from the US Federal Reserve.',
     long_description=long_description,
     long_description_content_type="text/markdown",
 
     # Define repo location.
-    url='',
+    url='https://github.com/areed1192/us-federal-reserve-python-api',
 
     # Define dependencies.
-    install_requires=[],
+    install_requires=[
+        'requests==2.24.0'
+    ],
 
     # Specify folder content.
     packages=find_namespace_packages(
-        include=[]
+        include=['fred']
     ),
 
     # Define the python version.
