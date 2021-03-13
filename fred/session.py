@@ -113,14 +113,23 @@ class FredSession():
             "URL: {url}".format(url=url)
         )
 
-        params_cleaned = params.copy()
-        params_cleaned['api_key'] = 'xxxxxxxx'
 
         if 'realtime_start' in params and isinstance(params['realtime_start'], datetime):
             params['realtime_start'] = params['realtime_start'].date().isoformat()
 
         if 'realtime_end' in params and isinstance(params['realtime_end'], datetime):
             params['realtime_end'] = params['realtime_end'].date().isoformat()
+        
+        if 'tag_names' in params and isinstance(params['tag_names'], list):
+            logging.info('Joining Tag Names: {lst}'.format(lst=params['tag_names']))
+            params['tag_names'] = ';'.join(params['tag_names'])
+
+        if 'exclude_tag_names' in params and isinstance(params['exclude_tag_names'], list):
+            logging.info('Joining Exclude Tag Names: {lst}'.format(lst=params['exclude_tag_names']))
+            params['exclude_tag_names'] = ';'.join(params['exclude_tag_names'])
+
+        params_cleaned = params.copy()
+        params_cleaned['api_key'] = 'xxxxxxxx'
 
         logging.info(
             "PARAMS: {params}".format(params=params_cleaned)
