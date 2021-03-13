@@ -710,7 +710,6 @@ class Series():
         offset: int = 0,
         limit: int = 1000,
         sort_order: str = 'asc',
-
     ) -> Dict:
         """Get the dates in history when a series' data values were revised or 
         new data values were released. Vintage dates are the release dates for

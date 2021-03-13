@@ -4,6 +4,8 @@ import logging
 import pathlib
 
 from typing import Dict
+from datetime import datetime
+from datetime import date
 
 
 class FredSession():
@@ -113,6 +115,12 @@ class FredSession():
 
         params_cleaned = params.copy()
         params_cleaned['api_key'] = 'xxxxxxxx'
+
+        if 'realtime_start' in params and isinstance(params['realtime_start'], datetime):
+            params['realtime_start'] = params['realtime_start'].date().isoformat()
+
+        if 'realtime_end' in params and isinstance(params['realtime_end'], datetime):
+            params['realtime_end'] = params['realtime_end'].date().isoformat()
 
         logging.info(
             "PARAMS: {params}".format(params=params_cleaned)

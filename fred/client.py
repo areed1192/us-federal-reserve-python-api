@@ -7,6 +7,7 @@ from fred.session import FredSession
 from fred.categories import Categories
 from fred.releases import Releases
 from fred.series import Series
+from fred.sources import Sources
 
 
 class FederalReserveClient():
@@ -66,5 +67,19 @@ class FederalReserveClient():
 
         # Grab the `Series` object.
         object = Series(session=self.fred_session)
+
+        return object
+
+    def sources(self) -> Sources:
+        """Used to access the `Sources` services.
+
+        ### Returns
+        ---
+        Users:
+            The `Sources` services Object.
+        """
+
+        # Grab the `Sources` object.
+        object = Sources(session=self.fred_session)
 
         return object

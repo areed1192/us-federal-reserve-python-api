@@ -6,6 +6,7 @@ from fred.client import FederalReserveClient
 from fred.categories import Categories
 from fred.releases import Releases
 from fred.series import Series
+from fred.sources import Sources
 
 
 class FredClientTest(TestCase):
@@ -48,6 +49,13 @@ class FredClientTest(TestCase):
         # Initialize the Series Service.
         series_services = self.fred_client.series()
         self.assertIsInstance(series_services, Series)
+
+    def test_creates_instance_of_sources_session(self):
+        """Create an instance and make sure it's a `fred.Sources` object."""
+
+        # Initialize the Sources Service.
+        sources_services = self.fred_client.sources()
+        self.assertIsInstance(sources_services, Sources)
 
     def tearDown(self) -> None:
         """Teardown the `FederalReserveClient` Client."""
