@@ -358,12 +358,6 @@ class Series():
             A collection of `Series` resources.
         """
 
-        if tag_names:
-            tag_names = ';'.join(tag_names)
-
-        if exclude_tag_names:
-            exclude_tag_names = ';'.join(exclude_tag_names)
-
         content = self.fred_session.make_request(
             method='get',
             endpoint=self.endpoint + '/search',
@@ -453,9 +447,6 @@ class Series():
         Dict
             A collection of `Series` resources.
         """
-
-        if tag_names:
-            tag_names = ';'.join(tag_names)
 
         content = self.fred_session.make_request(
             method='get',
@@ -551,12 +542,6 @@ class Series():
             A collection of `Series` resources.
         """
 
-        if tag_names:
-            tag_names = ';'.join(tag_names)
-
-        if exclude_tag_names:
-            exclude_tag_names = ';'.join(exclude_tag_names)
-
         content = self.fred_session.make_request(
             method='get',
             endpoint=self.endpoint + '/search/related_tags',
@@ -641,7 +626,6 @@ class Series():
         filter_value: str = 'all',
         start_time: str = None,
         end_time: str = None
-
     ) -> Dict:
         """Get economic data series sorted by when observations were updated on the 
         FRED® server (attribute last_updated). Results are limited to series updated

@@ -378,12 +378,6 @@ class Releases():
             >>> releases_service.get_release_series(release_id='53')
         """
 
-        if tag_names:
-            ';'.join(tag_names)
-
-        if exclude_tag_names:
-            ';'.join(exclude_tag_names)
-
         content = self.fred_session.make_request(
             method='get',
             endpoint=self.endpoint + '/series',
@@ -536,9 +530,6 @@ class Releases():
             >>> releases_service.get_release_tags(release_id='86')
         """
 
-        if tag_names:
-            ';'.join(tag_names)
-
         content = self.fred_session.make_request(
             method='get',
             endpoint=self.endpoint + '/tags',
@@ -648,12 +639,6 @@ class Releases():
             >>> releases_service = fred_client.releases()
             >>> releases_service.get_release_related_tags(release_id='86')
         """
-
-        if tag_names:
-            ';'.join(tag_names)
-
-        if exclude_tag_names:
-            ';'.join(exclude_tag_names)
 
         content = self.fred_session.make_request(
             method='get',

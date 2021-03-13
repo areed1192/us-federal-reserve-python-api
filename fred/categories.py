@@ -213,12 +213,6 @@ class Categories():
             >>> categories_service.get_category_series(category_id='125')
         """
 
-        if tag_names:
-            tag_names = ';'.join(tag_names)
-
-        if exclude_tag_names:
-            exclude_tag_names = ';'.join(exclude_tag_names)
-
         content = self.fred_session.make_request(
             method='get',
             endpoint=self.endpoint + '/series',
@@ -321,9 +315,6 @@ class Categories():
             >>> categories_service = fred_client.categories()
             >>> categories_service.get_category_tags(category_id='125')
         """
-
-        if tag_names:
-            tag_names = ';'.join(tag_names)
 
         content = self.fred_session.make_request(
             method='get',
@@ -434,12 +425,6 @@ class Categories():
             >>> categories_service = fred_client.categories()
             >>> categories_service.get_category_tags(category_id='125')
         """
-
-        if tag_names:
-            tag_names = ';'.join(tag_names)
-
-        if exclude_tag_names:
-            exclude_tag_names = ';'.join(exclude_tag_names)
 
         content = self.fred_session.make_request(
             method='get',
