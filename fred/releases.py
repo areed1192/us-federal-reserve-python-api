@@ -125,7 +125,7 @@ class Releases():
         realtime_end: Union[str, datetime] = todays_date,
         offset: int = 0,
         limit: int = 1000,
-        order_by: str = 'release_date',
+        order_by: str = 'release_id',
         sort_order: str = 'asc'
     ) -> Dict:
         """Get release dates for all releases of economic data.
@@ -150,9 +150,9 @@ class Releases():
             The maximum number of results to return. Is an integer
             between 1 and 1000, optional, default: 1000
 
-        order_by : str
-            One of the following strings: ['release_date', 'release_id',
-             'release_name']. optional, default: release_date
+        order_by : str (optional, Default='release_id')
+            One of the following strings: ['release_id', 'name', 
+            'press_release', 'realtime_start', 'realtime_end'].
 
         sort_order : str
             Sort results is ascending or descending order for attribute values

@@ -21,7 +21,7 @@ categories_service = fred_client.categories()
 pprint(categories_service.get_category(category_id='125'))
 
 # Grab a categories children.
-pprint(categories_service.get_category(category_id='13'))
+pprint(categories_service.get_category_children(category_id='13'))
 
 # Grab related categories.
 pprint(categories_service.get_related_category(category_id='32073'))
