@@ -1,6 +1,6 @@
-from fred.client import FederalReserveClient
 from pprint import pprint
 from configparser import ConfigParser
+from fred.client import FederalReserveClient
 
 # Initialize the Parser.
 config = ConfigParser()

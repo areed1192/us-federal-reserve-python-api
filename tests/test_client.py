@@ -5,8 +5,9 @@ from configparser import ConfigParser
 from fred.client import FederalReserveClient
 from fred.categories import Categories
 from fred.releases import Releases
-from fred.series import Series
 from fred.sources import Sources
+from fred.series import Series
+from fred.tags import Tags
 
 
 class FredClientTest(TestCase):
@@ -56,6 +57,13 @@ class FredClientTest(TestCase):
         # Initialize the Sources Service.
         sources_services = self.fred_client.sources()
         self.assertIsInstance(sources_services, Sources)
+
+    def test_creates_instance_of_tags_session(self):
+        """Create an instance and make sure it's a `fred.Tags` object."""
+
+        # Initialize the Tags Service.
+        tags_services = self.fred_client.tags()
+        self.assertIsInstance(tags_services, Tags)
 
     def tearDown(self) -> None:
         """Teardown the `FederalReserveClient` Client."""
